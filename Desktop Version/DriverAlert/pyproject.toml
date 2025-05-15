@@ -1,0 +1,149 @@
+# This project was generated with 0.3.22 using template: https://github.com/beeware/briefcase-template@v0.3.22
+[tool.briefcase]
+project_name = "DriverAlert"
+bundle = "com.example.DriverAlert"
+version = "0.0.1"
+url = "https://DriverAlert.example.com/DriverAlert"
+license.file = "LICENSE"
+author = "Batch 21"
+author_email = "jayadharshiniim@gmail.com"
+
+[tool.briefcase.app.DriverAlert]
+formal_name = "DriverAlert"
+description = "My first application"
+long_description = """More details about the app should go here.
+"""
+sources = [
+    "src/DriverAlert",
+]
+test_sources = [
+    "tests",
+]
+
+requires = [
+    "toga",
+    "opencv-python",
+    "numpy",
+    "face_recognition",
+    "face_recognition_models @ git+https://github.com/ageitgey/face_recognition_models",
+    "scipy",
+    "playsound",
+    "dlib",
+    "Pillow",
+    "setuptools"
+]
+
+test_requires = [
+    "pytest",
+]
+
+[tool.briefcase.app.DriverAlert.macOS]
+universal_build = true
+requires = [
+    "toga-cocoa~=0.4.7",
+    "std-nslog~=1.0.3",
+]
+
+[tool.briefcase.app.DriverAlert.linux]
+requires = [
+    "toga-gtk~=0.4.7",
+]
+
+[tool.briefcase.app.DriverAlert.linux.system.debian]
+system_requires = [
+    "libcairo2-dev",
+    "libgirepository1.0-dev",
+]
+
+system_runtime_requires = [
+    "gir1.2-gtk-3.0",
+    "libgirepository-1.0-1",
+    "libcanberra-gtk3-module",
+]
+
+[tool.briefcase.app.DriverAlert.linux.system.rhel]
+system_requires = [
+    "cairo-gobject-devel",
+    "gobject-introspection-devel",
+]
+
+system_runtime_requires = [
+    "gobject-introspection",
+    "gtk3",
+    "libcanberra-gtk3",
+]
+
+[tool.briefcase.app.DriverAlert.linux.system.suse]
+system_requires = [
+    "cairo-devel",
+    "gobject-introspection-devel",
+]
+
+system_runtime_requires = [
+    "gtk3",
+    "gobject-introspection", "typelib(Gtk) = 3.0",
+    "libcanberra-gtk3-module",
+]
+
+[tool.briefcase.app.DriverAlert.linux.system.arch]
+system_requires = [
+    "cairo",
+    "gobject-introspection",
+    "gtk3",
+    "libcanberra",
+]
+
+system_runtime_requires = [
+    "gtk3",
+    "gobject-introspection-runtime",
+    "libcanberra",
+]
+
+[tool.briefcase.app.DriverAlert.linux.appimage]
+manylinux = "manylinux_2_28"
+
+system_requires = [
+    "cairo-gobject-devel",
+    "gobject-introspection-devel",
+    "gtk3-devel",
+    "libcanberra-gtk3",
+    "PackageKit-gtk3-module",
+    "gvfs-client",
+]
+
+linuxdeploy_plugins = [
+    "DEPLOY_GTK_VERSION=3 gtk",
+]
+
+[tool.briefcase.app.DriverAlert.linux.flatpak]
+flatpak_runtime = "org.gnome.Platform"
+flatpak_runtime_version = "47"
+flatpak_sdk = "org.gnome.Sdk"
+
+[tool.briefcase.app.DriverAlert.windows]
+requires = [
+    "toga-winforms~=0.4.7",
+]
+
+[tool.briefcase.app.DriverAlert.iOS]
+requires = [
+    "toga-iOS~=0.4.7",
+    "std-nslog~=1.0.3",
+]
+
+[tool.briefcase.app.DriverAlert.android]
+requires = [
+    "toga-android~=0.4.7",
+]
+
+base_theme = "Theme.MaterialComponents.Light.DarkActionBar"
+
+build_gradle_dependencies = [
+    "com.google.android.material:material:1.12.0",
+]
+
+[tool.briefcase.app.DriverAlert.web]
+requires = [
+    "toga-web~=0.4.7",
+]
+style_framework = "Shoelace v2.3"
